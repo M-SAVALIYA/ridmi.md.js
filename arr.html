@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var arrChars = [4, 2, 14, 9, 0, 8, 2, 4, 130, 65, 0, 1];
+
+        for (var i = 0; i < arrChars.length; i++) {
+            var digsum = 0;
+
+            while (arrChars[i] > 0) {
+                digsum += arrChars[i] % 10;
+
+                arrChars[i] = Math.floor(arrChars[i] / 10);
+            }
+
+            var sum = 0; // this last part won't work and I just get "nan", 12 times
+
+            for (var j = 0; j < arrChars.length; j++) {
+                sum += parseInt(digsum[j]);
+            }
+
+            console.log(sum); // desired output should be '50'
+        }
+
+    </script>
+</body>
+
+</html>
